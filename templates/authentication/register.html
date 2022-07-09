@@ -1,0 +1,9 @@
+{% extends 'authentication/base.html' %}
+{% block content %}
+<h4>Registration</h4>
+<form action="" method="POST">
+{% csrf_token %}
+{{form.as_p}}
+<input type="submit" class="btn btn-primary" value="Add">
+</form> 
+{% endblock content %}

@@ -1,0 +1,14 @@
+{% extends 'authentication/base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-sm-8 offset-2">
+        <h4 class="alert alert-dark">Update User Information</h4>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" class="btn btn-primary" value="Update">
+            <a class="btn btn-primary" href="{% url 'showadmin'%}">Back to Home</a>
+        </form>
+    </div>
+</div>
+{% endblock content %}

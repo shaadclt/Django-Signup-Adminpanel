@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="width:100%">
+        <a class="navbar-brand ps-5" href="#"><h2>Home</h2></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto">
+          </ul>
+          {% if user.is_superuser %}
+          <button class="btn btn-primary me-3" type = "submit"><a href="/useradmin" style="text-decoration:none; color:white; font-weight:600">Admin</a></button>
+          {% endif %}
+          <button class="btn btn-primary me-3" type = "submit"><a href="/signout" style="text-decoration:none; color:white; font-weight:600">Sign Out</a></button>
+          </form>
+        </div>
+      </nav>
+
+    <div class="container-fluid" >
+
+        <div class="container my-5">
+
+            
+    <div class="container">
+        <div class="row">
+            <h3>Courses</h3><br><br>
+        {% for product in products %}
+       <div class="col-md-3">
+        <div class="card">
+            <img class="card-img-top" src="{{product.image}}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{product.name}}</h5>
+              <p class="card-text">₹{{product.price}}</p>
+              <a href="#" class="btn btn-primary">Add to cart</a>
+              <a href="#" class="btn btn-primary">Buy now</a>
+            </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>   
+    </div>     
+    <script src="" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+</div>
+</div>
+    
+</body>
+</html>
