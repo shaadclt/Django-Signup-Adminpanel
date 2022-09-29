@@ -40,7 +40,7 @@
             <label for=""><h6>Confirm Password</h6></label>
             <input class="form-control" type = "password" id = "pass2" name = "pass2" placeholder="Enter password again" required><br>
 
-            {% if user.is_authenticated %}
+            {% if user.is_superuser %}
             <button class="btn btn-primary" type="submit" style="text-decoration:none; color:white; font-weight:600;">Create User</button>
             <button class="btn btn-primary me-3" type = "submit"><a href="/useradmin" style="text-decoration:none; color:white; font-weight:600">Back to Admin</a></button>
 
